@@ -1,0 +1,45 @@
+﻿@using MVCSSO.Models;
+@{
+    ViewBag.Title = "Index";
+    var modeldata = (ModelSSO)ViewBag.Data ?? null;
+}
+<h2>Data SSO</h2>
+
+<div class="bs-example" data-example-id="striped-table">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>UserName</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>PersonalId</th>
+                <th>Department</th>
+                <th>GridNumber</th>
+                <th>Program</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (modeldata != null)
+                {
+                    <tr>
+                        <td>@modeldata.UserName</td>
+                        <td>@modeldata.FirstName</td>
+                        <td>@modeldata.LastName</td>
+                        <td>@modeldata.PersonalId</td>
+                        <td>@modeldata.Department</td>
+                        <td>@modeldata.GridNumber</td>
+                        <td>@modeldata.Program</td>
+                        <td>@modeldata.Email</td>
+                    </tr>
+                }
+            }
+            
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <a class="btn btn-primary btn-logout" href="@Url.Action("Slo","Home")">Logout</a>
+</div>
+
